@@ -48,3 +48,17 @@ jobs:
 
       - name: Update Streamlit app
         run: python app.py
+
+        # 5. Commit & push updated CSVs + model
+      - name: Commit and push updated data & model
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add forecast_next3days_all_models.csv \
+                 karachi_aqi_features.csv \
+                 karachi_aqi_quality.csv \
+                 model_results.csv \
+                 karachi_air_quality.csv \
+                 best_model.pkl
+          git commit -m "Auto-update AQI data, forecasts & model [skip ci]" || echo "No changes to commit"
+          git push
