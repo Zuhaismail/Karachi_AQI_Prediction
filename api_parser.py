@@ -5,7 +5,7 @@ import os
 from datetime import datetime, timedelta, timezone
 
 # OpenWeatherMap API key
-API_KEY = "e14eadfe9cc4e1890bbab87018374427"
+API_KEY = os.getenv("AQI_API_KEY")
 
 # Karachi coordinates
 LAT = 24.8607
@@ -136,6 +136,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
