@@ -147,7 +147,7 @@ Limitation: Needs some care to avoid overfitting on small datasets.
 * **Forecast chart (LightGBM)** with alert line at AQI 200 (Unhealthy).
 * **Forecast table** for inspection.
 
-📌 **LightGBM is used in the app because it gave the best fit and accuracy.**
+**LightGBM is used in the app because it gave the best fit and accuracy.**
 
 ---
 
