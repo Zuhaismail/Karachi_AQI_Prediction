@@ -62,5 +62,5 @@ jobs:
                  karachi_air_quality.csv \
                  model_results.csv
           git commit -m "Auto-update AQI data, forecasts & model [skip ci]" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }} HEAD:main
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref_name }}
 
