@@ -38,7 +38,7 @@ jobs:
         run: python feature_engineering.py
 
       - name: Run data preprocessing
-        run: python data_preprocessing.py
+        run: python data_Preprocessing.py
 
       - name: Train models
         run: python train_models.py
