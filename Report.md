@@ -75,7 +75,24 @@ Output file: `karachi_aqi_features.csv`.
 
 ---
 
-## 6) Data Preprocessing
+## 6) Exploratory Data Analysis (EDA)  
+
+**Key Insights:**  
+- Dataset shape: **1,980 rows × 24 columns**  
+- **Correlations with AQI**:  
+  - Strong: **PM2.5 (0.99)**, **PM10 (0.97)**  
+  - Moderate: **O3 (0.58)**, **SO2 (0.50)**  
+  - Weak/negative: **NO, NO2, CO, NH3**  
+- **AQI Categories**:  
+  - Mostly **Moderate** and **Unhealthy for Sensitive Groups**  
+  - Occasional spikes to **Unhealthy (151–200)**  
+- **Time patterns**: Higher AQI on **weekends/evenings**  
+
+Karachi’s AQI is mainly driven by **particulate matter (PM2.5 & PM10)**.  
+
+---
+
+## 7) Data Preprocessing
 
 * Removed **missing/invalid values**.
 * **Chronological split:** first 80% train, last 20% test (to avoid future data leakage).
@@ -84,7 +101,7 @@ Output file: `karachi_aqi_features.csv`.
 
 ---
 
-## 7) Models Used
+## 8) Models Used
 
 Three machine learning models were trained and compared:
 
@@ -122,7 +139,7 @@ Limitation: Needs some care to avoid overfitting on small datasets.
 
 ---
 
-## 8) Evaluation (RMSE, MAE, R²)
+## 9) Evaluation (RMSE, MAE, R²)
 
 * **RMSE:** measures large errors (lower is better).
 * **MAE:** average error (lower is better).
@@ -132,15 +149,16 @@ Limitation: Needs some care to avoid overfitting on small datasets.
 
 ---
 
-## 9) Forecasting (Next 72 Hours)
+## 10) Forecasting (Next 72 Hours)
 
 * Predicts one hour ahead, then uses that prediction to forecast the next, continuing for 72 hours.
 * Updates lag and rolling features step by step.
 * Final output: `forecast_next3days_all_models.csv`.
+* historical archive of forecasts for tracking model stability over time: `forecast_history.csv`.
 
 ---
 
-## 10) Streamlit Dashboard
+## 11) Streamlit Dashboard
 
 * **Historical AQI chart** and latest value.
 * **Model performance table** with highlights for best results.
@@ -151,14 +169,14 @@ Limitation: Needs some care to avoid overfitting on small datasets.
 
 ---
 
-## 11) Automation with GitHub Actions
+## 12) Automation with GitHub Actions
 
 * Daily script runs automatically.
 * At **12:00 PM Karachi time** (7:00 AM UTC), it fetches new data, retrains, forecasts, and updates the app.
 
 ---
 
-## 12) Results & Interpretation
+## 13) Results & Interpretation
 
 * **AQI forecast is refreshed daily**.
 * Dashboard alerts if AQI is expected to go above **200 (Unhealthy)**.
