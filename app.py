@@ -16,7 +16,8 @@ CSV_URLS = {
 }
 
 # Load Data
-@st.cache_data(ttl=86400)  # cache for 24h
+#@st.cache_data(ttl=86400)  # cache for 24h
+@st.cache_data(ttl=3600)  # reload every hour
 def load_data():
     history = pd.read_csv(CSV_URLS["history"], parse_dates=["timestamp"])
     forecast = pd.read_csv(CSV_URLS["forecast"], parse_dates=["timestamp"])
@@ -77,6 +78,7 @@ st.dataframe(forecast[["timestamp", best_model]].rename(columns={best_model: "Fo
 
 # Show last update info
 st.caption(f"Last updated from GitHub CSVs: {history['timestamp'].max().strftime('%Y-%m-%d %H:%M UTC')}")
+
 
 
 
