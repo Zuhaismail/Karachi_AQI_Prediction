@@ -11,7 +11,7 @@ This project builds an **AQI (Air Quality Index) prediction system for Karachi**
 - Forecasts **next 72 hours of AQI**  
 - Deploys results to a **Streamlit dashboard** that **updates daily** via GitHub Actions  
 
-🔗 **Live Dashboard:** [Karachi AQI Prediction](https://karachiaqiprediction-ene5lvsysk6fqdwbgnk75s.streamlit.app/)  
+🔗 **Live Dashboard:** [Karachi AQI Prediction](https://karachiaqipredictionbyzuhaismail.streamlit.app/)  
 
 ---
 
@@ -108,13 +108,13 @@ Features:
 ✔ Forecast chart (LightGBM, alerts at AQI > 200)  
 ✔ Auto-updating every day  
 
-🔗 [Streamlit Dashboard](https://karachiaqiprediction-ene5lvsysk6fqdwbgnk75s.streamlit.app/)  
+🔗 [Streamlit Dashboard](https://karachiaqipredictionbyzuhaismail.streamlit.app/)  
 
 ---
 
 ## ⚙️ Automation (GitHub Actions)  
 
-- Runs **daily @ 12:00 PM Karachi time**  
+- Runs **daily @ 12:00 AM Karachi time**  
 - Workflow:  
   1. Fetch new data  
   2. Preprocess & retrain models  
