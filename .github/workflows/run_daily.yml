@@ -2,12 +2,12 @@ name: Run AQI Pipeline Daily
 
 on:
   schedule:
-    # Run every day at 12:00 PM Karachi time (UTC+5 = 07:00 UTC)
-    - cron: "0 7 * * *"
+    # Run every day at 12:00 AM Karachi time (UTC+5 = 19:00 UTC previous day)
+    - cron: "0 19 * * *"
   workflow_dispatch:
 
 permissions:
-  contents: write   # 👈 Allow pushing commits to repo
+  contents: write   #  Allow pushing commits to repo
 
 jobs:
   run-pipeline:
