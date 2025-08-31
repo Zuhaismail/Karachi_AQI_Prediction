@@ -1,11 +1,5 @@
 # Karachi AQI Prediction — End‑to‑End Report
 
-**Student:** Zuha M. Ismail
-**Location:** Karachi, Pakistan
-**Dates covered:** 1 June 2025 → present (hourly)
-
----
-
 ## 1) Executive Summary
 
 This project builds an **AQI (Air Quality Index) prediction system for Karachi**. Data are collected every hour from the OpenWeather API, converted into a **continuous EPA-style AQI value**, enriched with useful features, cleaned, and then used to train three machine learning models — **Random Forest, Gradient Boosting, and LightGBM**. The **best model (LightGBM)** is used to forecast AQI for the **next 3 days**. The results are shown in a **Streamlit dashboard** that updates automatically every day via GitHub Actions.
@@ -172,7 +166,7 @@ Limitation: Needs some care to avoid overfitting on small datasets.
 ## 12) Automation with GitHub Actions
 
 * Daily script runs automatically.
-* At **12:00 PM Karachi time** (7:00 AM UTC), it fetches new data, retrains, forecasts, and updates the app.
+* At **12:00 AM Karachi time**, it fetches new data, retrains, forecasts, and updates the app.
 
 ---
 
