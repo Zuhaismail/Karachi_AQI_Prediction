@@ -32,13 +32,13 @@ st.line_chart(history.set_index("timestamp")["aqi"])
 latest_aqi = history.iloc[-1]["aqi"]
 st.metric("Current AQI", f"{latest_aqi:.2f}")
 
-#  Show Historical Data Table below graph
-st.subheader("Historical Data Table")
-st.dataframe(history[["timestamp", "aqi"]].rename(columns={"aqi": "Historical AQI"}))
+# Show Historical Data Table (with all pollutants)
+st.subheader("Historical Data Table (All Pollutants)")
+st.dataframe(history)  # full table instead of only AQI
 
 # Show Model Performance
 st.subheader("Model Performance (Evaluation Metrics)")
-st.dataframe(results)  # <-- No highlight, plain table
+st.dataframe(results)  # plain table
 
 # Forecast with LightGBM
 best_model = "LightGBM"
@@ -68,4 +68,6 @@ st.dataframe(forecast[["timestamp", best_model]].rename(columns={best_model: "Fo
 
 # Show last update info
 st.caption(f"Last updated from GitHub CSVs: {history['timestamp'].max().strftime('%Y-%m-%d %H:%M UTC')}")
+
+
 
