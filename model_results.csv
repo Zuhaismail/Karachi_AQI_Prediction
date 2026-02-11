@@ -1,4 +1,4 @@
 ,RMSE,MAE,R2
-RandomForest,1.73,0.5,0.999
-GradientBoosting,1.19,0.8,0.999
-LightGBM,1.86,0.78,0.998
+RandomForest,1.65,0.5,0.999
+GradientBoosting,1.27,0.84,0.999
+LightGBM,1.83,0.79,0.998
